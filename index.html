@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive personal video editor portfolio with a browser-based editing demo.">
+  <title>JEET — Video Editor Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-glow"></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span>J</span> JEETCREATES<span class="dot">.</span></a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav">
+      <a href="#home">Home</a><a href="#work">Work</a><a href="#editor">Editor</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#editor">Try Editor ↗</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-grid"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="pulse"></span> VIDEO EDITOR • CREATOR • STORYTELLER</p>
+        <h1>I turn raw moments<br>into <em>visual stories.</em></h1>
+        <p class="hero-text">Cinematic edits, college reels and visual experiences built with rhythm, emotion and a little bit of chaos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Explore my work <span>↗</span></a>
+          <a class="btn btn-ghost" href="#editor">Open interactive editor</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <div class="hero-frame">
+          <div class="frame-top"><span>REC ●</span><span>00:27:14</span></div>
+          <div class="abstract-scene">
+            <video src="assets/Video-54507.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;border-radius:22px;filter:saturate(1.15) contrast(1.08);"></video>
+            <div class="scan"></div>
+            <span class="scene-label">YOUR STORY / MY CUT</span>
+          </div>
+          <div class="frame-bottom"><span>4K • 24 FPS</span><span>01 / 06</span></div>
+        </div>
+      </div>
+      <div class="hero-meta"><span>BASED IN INDIA</span><span>AVAILABLE FOR PROJECTS</span><span>© 2026</span></div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="section-head reveal"><div><p class="eyebrow">SELECTED WORK</p><h2>Frames that <em>move.</em></h2></div><p class="section-note">A selection of concepts for reels, brand films and personal stories.</p></div>
+      <div class="project-grid">
+        <article class="project-card large reveal" data-project="01">
+          <div class="project-visual visual-one"><span class="project-number">01</span><span class="play">▶</span><div class="visual-title">AFTER<br>RAIN</div></div>
+          <div class="project-info"><div><h3>After Rain</h3><p>Cinematic • Color grade • Sound design</p></div><span>2026</span></div>
+        </article>
+        <article class="project-card reveal" data-project="02">
+          <div class="project-visual visual-two" style="position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; padding:18px;">
+            <video class="project-video" muted playsinline loop preload="metadata" src="assets/Sky Aesthetics.mp4" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; opacity:0.9;"></video>
+            <span class="project-number">02</span>
+            <span class="play">▶</span>
+            <div class="visual-title small">SKY<br>AESTHETICS</div>
+          </div>
+          <div class="project-info"><div><h3>Sky Aesthetics</h3><p>Sunset reel • Fast cuts</p></div><span>2026</span></div>
+        </article>
+        <article class="project-card reveal" data-project="03">
+          <div class="project-visual visual-three"><span class="project-number">03</span><span class="play">▶</span><div class="visual-title small">BY THE<br>SEA</div></div>
+          <div class="project-info"><div><h3>By The Sea</h3><p>Nature • Slow motion • Ambient</p></div><span>2026</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="editor" class="section editor-section">
+      <div class="section-head reveal"><div><p class="eyebrow">INTERACTIVE LAB</p><h2>Your browser.<br><em>Your edit.</em></h2></div><p class="section-note">Drop an image or video below and experiment with real-time visual controls. Your settings are saved locally.</p></div>
+      <div class="editor-shell reveal">
+        <aside class="editor-sidebar">
+          <div class="tool-label">MEDIA</div>
+          <label class="upload-box" id="dropZone" for="mediaInput">
+            <span class="upload-icon">＋</span><strong>Drop media here</strong><small>or click to browse</small>
+            <input id="mediaInput" type="file" accept="image/*,video/*" hidden>
+          </label>
+          <div class="media-status" id="mediaStatus">No media selected</div>
+          <div class="tool-label">EFFECTS</div>
+          <div class="control">
+            <div><label for="brightness">Brightness</label><output id="brightnessValue">100%</output></div>
+            <input id="brightness" type="range" min="0" max="200" value="100">
+          </div>
+          <div class="control">
+            <div><label for="contrast">Contrast</label><output id="contrastValue">100%</output></div>
+            <input id="contrast" type="range" min="0" max="200" value="100">
+          </div>
+          <div class="control">
+            <div><label for="saturation">Saturation</label><output id="saturationValue">100%</output></div>
+            <input id="saturation" type="range" min="0" max="200" value="100">
+          </div>
+          <div class="control">
+            <div><label for="blur">Blur</label><output id="blurValue">0px</output></div>
+            <input id="blur" type="range" min="0" max="12" value="0">
+          </div>
+          <div class="editor-buttons">
+            <button class="small-btn" id="grayscaleBtn">Grayscale</button>
+            <button class="small-btn" id="resetBtn">Reset</button>
+          </div>
+          <button class="save-btn" id="saveBtn">Save edit settings</button>
+          <p class="save-note" id="saveNote">Settings are stored in your browser.</p>
+        </aside>
+        <div class="editor-main">
+          <div class="canvas-wrap" id="canvasWrap">
+            <canvas id="canvas" width="960" height="540"></canvas>
+            <video id="video" playsinline muted hidden></video>
+            <div class="canvas-empty" id="canvasEmpty"><div class="empty-icon">✦</div><strong>Preview canvas</strong><span>Upload media to start editing</span></div>
+            <div class="canvas-badge">LIVE PREVIEW</div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-head"><span>EDIT TIMELINE</span><span id="timeReadout">00:00 / 00:00</span></div>
+            <div class="track"><div class="track-fill"></div><div class="playhead" id="playhead"></div></div>
+            <div class="timeline-actions"><button id="playBtn">▶ Play preview</button><span>Canvas rendering • Local processing</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="about-number">01</div>
+      <div class="about-copy reveal"><p class="eyebrow">ABOUT THE EDITOR</p><h2>Simple cuts.<br><em>Strong feelings.</em></h2><p>I’m a beginner creator building my craft around cinematic storytelling, short-form content and experimental visual design. I like edits that feel intentional — every transition, frame and beat should have a reason.</p><p>This portfolio combines my creative work with a small browser-based editing lab, showing how HTML, CSS and JavaScript can create an interactive media experience.</p><div class="stats"><div><strong>03+</strong><span>Creative concepts</span></div><div><strong>24</strong><span>FPS mindset</span></div><div><strong>∞</strong><span>Ideas to cut</span></div></div></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-card reveal"><p class="eyebrow">LET'S CREATE</p><h2>Have a story?<br><em>Let's cut it.</em></h2><p>Open to cinematic reels, college content, edits and creative collaborations.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:hello@example.com">Start a conversation ↗</a><a class="btn btn-ghost" href="#home">Back to top ↑</a></div></div>
+    </section>
+  </main>
+
+  <footer><span>JEET<span class="dot">.</span> — VIDEO EDITOR PORTFOLIO</span><span>BUILT WITH HTML • CSS • JAVASCRIPT</span><span>© 2026</span></footer>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
